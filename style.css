@@ -30,7 +30,7 @@ body{
   overflow: hidden;
   
   /* display: block; */
-  background-image: url(imagini/imagini_background/ultimaparte2.jpg);
+  background-image: url(/Site_Portfolio/imagini/imagini_background/ultimaparte2.jpg);
   background-position: center center;
   background-repeat:  no-repeat;
   background-attachment: scroll;

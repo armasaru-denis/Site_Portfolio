@@ -8,7 +8,7 @@ const bodyTag = document.querySelector('body')
 let divBullets 
 // = document.querySelector('.bullets')
 
-let divBullets2 
+
 // = document.querySelector('.nr2')
 
 let imgParent
@@ -21,7 +21,7 @@ let imgParent2
 let allImages2
 // = document.querySelectorAll('.mod2 img')
 
-console.log(divBullets2, divBullets)
+
 
 let closeSlide = document.querySelector('.closeSlide')
 
@@ -92,9 +92,9 @@ document.getElementById('btn4').addEventListener('click', ()=>{
 
 
 
-function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
+function removeAllChildNodes(x) {
+    while (x.firstChild) {
+        x.removeChild(x.firstChild);
     }
 }
 // removeBtn.appendChild(x)
@@ -109,7 +109,7 @@ closeSlide.addEventListener('click',()=>{
     modal3.classList.remove('active')
     modal4.classList.remove('active')
     removeAllChildNodes(divBullets)
-    removeAllChildNodes(divBullets2)
+    // removeAllChildNodes(divBullets2)
 })
 
 function openModalFun() {
@@ -119,12 +119,15 @@ function openModalFun() {
     allImages[0].classList.add('active')
 }
 
+let falsebullet
 
 function bulletsFun(){
         // create bullets
         let countImg = 0
         let imgDuplicate
         let bullet
+
+        let sidebullet
         
         allImages.forEach(img => {
             imgDuplicate = img
@@ -138,13 +141,17 @@ function bulletsFun(){
                 if (bullet.classList.contains(0)) {
                 bullet.classList.add('active')
                 }
+
+                
             })
               
-
+            
             setImgPosition
     // for bullets event
     
 }
+
+
 
 function setImgPosition() {
         
@@ -158,13 +165,22 @@ function setImgPosition() {
     
     // this.focus()
     if(imgNo > 0) {
-        const n = parseInt(this.classList.value)
+        let n = parseInt(this.classList.value)
         for(let i=n-1; i>=0; i--) {
             x += allImages[i].clientWidth + 100
-           
+
+            
         }
+
+        
+
+        
     }
+
+    
     
     const leftVal = modalSection.clientWidth/2 - allImages[imgNo].clientWidth/2 - x
     imgParent.style.left = leftVal + 'px'
+    
 }
+
